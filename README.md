@@ -2,6 +2,7 @@
 cpdf wrapper for node
 
 Index
+===========
 1. Basic Usage
 2. Merging and Splitting
 3. Pages
@@ -17,8 +18,8 @@ Index
 13. Miscellaneous
 
 
-1. Basic Usage
-
+h1. Basic Usage
+===============
 cpdf in.pdf 1-3,6 -o out.pdf
 
 Read in.pdf, select pages 1, 2, 3 and 6, and write those pages to out.pdf.
