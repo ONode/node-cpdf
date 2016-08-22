@@ -188,3 +188,7 @@ Remove any attachments from in.pdf, writing to out.pdf.
 Blacken all the text in in.pdf, writing to out.pdf.
 
 `cpdf -thinlines 2pt in.pdf -o out.pdf`
+
+heroku buildpack
+=========
+For those who need to run this binaries on heroku, please visit https://github.com/railslab/heroku-buildpack-cpdf for the add-on
