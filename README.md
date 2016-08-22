@@ -3,6 +3,7 @@ cpdf wrapper for node
 
 Index
 ===========
+
 1. Basic Usage
 2. Merging and Splitting
 3. Pages
@@ -18,8 +19,8 @@ Index
 13. Miscellaneous
 
 
-1. Basic Usage
-==============
+### 1. Basic Usage
+
 `cpdf in.pdf 1-3,6 -o out.pdf`
 
 Read in.pdf, select pages 1, 2, 3 and 6, and write those pages to out.pdf.
@@ -36,8 +37,8 @@ Using AND to perform several operations in order, here merging two files togethe
 
 Read control.txt and use its contents as the command line arguments for cpdf.
 
-2. Merging and Splitting
-==========
+### 2. Merging and Splitting
+
 `cpdf -merge in.pdf in2.pdf -o out.pdf`
 
 Merge in.pdf and in2.pdf into one document, writing to out.pdf.
@@ -50,8 +51,8 @@ Split in.pdf into ten-page chunks, writing them to Chunk001.pdf, Chunk002.pdf et
 
 Split in.pdf on bookmark boundaries, writing each to a file whose name is the bookmark label.
 
-3. Pages
-==========
+### 3. Pages
+
 `cpdf -scale-page "2 2" in.pdf -o out.pdf`
 
 Scale both the dimensions and contents of in.pdf by a factor of two in x and y directions.
@@ -72,8 +73,8 @@ Rotate the contents of the pages in in.pdf by ninety degrees and write to out.pd
 
 Crop the pages in in.pdf to a 600 pts by 400 pts rectangle.
 
-4. Encryption and Decryption
-==========
+### 4. Encryption and Decryption
+
 `cpdf -encrypt 128bit fred joe in.pdf -o out.pdf`
 
 Encrypt in.pdf using 128bit PDF encryption using the owner password fred and the user password joe and writing the encrypted file to out.pdf
@@ -82,8 +83,8 @@ Encrypt in.pdf using 128bit PDF encryption using the owner password fred and the
 
 Decrypt in.pdf using the owner password, writing to out.pdf.
 
-5. Compression
-===========
+### 5. Compression
+
 `cpdf -compress in.pdf -o out.pdf`
 
 Compress the data streams in in.pdf, writing the result to out.pdf.
@@ -92,8 +93,8 @@ Compress the data streams in in.pdf, writing the result to out.pdf.
 
 Decompress the data streams in in.pdf, writing to out.pdf.
 
-6. Bookmarks
-===========
+### 6. Bookmarks
+
 `cpdf -list-bookmarks in.pdf`
 
 List the bookmarks in in.pdf. This would produce:
@@ -106,14 +107,14 @@ List the bookmarks in in.pdf. This would produce:
 `cpdf -add-bookmarks bookmarks.txt in.pdf -o out.pdf`
 
 Add bookmarks in the same form from a prepared file bookmarks.txt to in.pdf, writing to out.pdf.
-7. Presentations
-===========
+### 7. Presentations
+
 `cpdf -presentation in.pdf 2-end -trans Split -duration 10 -o out.pdf`
 
 Use the Split style to build a presentation from the PDF in.pdf, each slide staying 10 seconds on screen unless manually advanced. The first page, being a title does not move on automatically, and has no transition effect.
 
-8. Logos, Watermarks and Stamps
-===========
+### 8. Logos, Watermarks and Stamps
+
 `cpdf -stamp-on watermark.pdf in.pdf -o out.pdf`
 
 Stamp the file watermark.pdf on to each page of in.pdf, writing the result to out.pdf.
@@ -122,8 +123,8 @@ Stamp the file watermark.pdf on to each page of in.pdf, writing the result to ou
 
 Add a page number and date to all the pages in in.pdf using the Courier font, writing to out.pdf
 
-9. Multipage Facilities
-==========
+### 9. Multipage Facilities
+
 `cpdf -twoup-stack in.pdf -o out.pdf`
 
 Two up impose the file in.pdf, writing to out.pdf
@@ -132,8 +133,8 @@ Two up impose the file in.pdf, writing to out.pdf
 
 Add extra blank pages after pages one, three and four of a document.
 
-10. Annotations
-==========
+### 10. Annotations
+
 `cpdf -list-annotations in.pdf`
 
 List the annotations in a file in.pdf to standard output. This might produce:
@@ -145,12 +146,13 @@ Annotation text content 1
 --------------------------------
 Annotation text content 2
 --------------------------------
+
 `cpdf -copy-annotations from.pdf in.pdf -o out.pdf`
 
 Copy the annotations from from.pdf to in.pdf, writing to out.pdf.
 
-11. Document Information and Metadata
-==========
+### 11. Document Information and Metadata
+
 `cpdf -set-title "The New Title" in.pdf -o out.pdf`
 
 Set the document title of in.pdf. writing to out.pdf.
@@ -171,8 +173,8 @@ Set the document in.pdf to open in Acrobat Viewer showing two columns of pages, 
 
 Set the document in.pdf to open in Acrobat Viewer in full screen mode, putting the result in out.pdf.
 
-12. File Attachments
-==========
+### 12. File Attachments
+
 `cpdf -attach-file sheet.xls in.pdf -o out.pdf`
 
 Attach the file sheet.xls to in.pdf, writing to out.pdf.
@@ -181,14 +183,14 @@ Attach the file sheet.xls to in.pdf, writing to out.pdf.
 
 Remove any attachments from in.pdf, writing to out.pdf.
 
-13. Miscellaneous
-==========
+### 13. Miscellaneous
+
 `cpdf -blacktext in.pdf -o out.pdf`
 
 Blacken all the text in in.pdf, writing to out.pdf.
 
 `cpdf -thinlines 2pt in.pdf -o out.pdf`
 
-heroku buildpack
-=========
-For those who need to run this binaries on heroku, please visit https://github.com/railslab/heroku-buildpack-cpdf for the add-on
+### heroku buildpack
+
+For those who need to run this binaries on heroku, please visit https://github.com/railslab/heroku-buildpack-cpdf for the add-on.

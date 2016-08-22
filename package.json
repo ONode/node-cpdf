@@ -1,18 +1,20 @@
 {
-  "name": "cpdf-N",
-  "version": "0.1.0",
-  "description": "cpdf wrapper for node",
+  "name": "cpdf-n",
+  "version": "0.1.1",
+  "description": "cpdf wrapper for node. Simply the full list of interface from the binaries",
   "author": "Nathan G <nathan@gnab.fr> | jjhesk",
   "main": "index.js",
   "scripts": {
     "pretest": "jshint index.js && jscs index.js",
-    "test": "mocha test"
+    "test": "mocha test",
+    "compile": "babel src --out-dir lib"
   },
   "keywords": [
     "cpdf",
     "pdf",
     "node",
-    "wrapper"
+    "wrapper",
+    "pdf"
   ],
   "dependencies": {
     "debug": "^2.2.0",
@@ -20,7 +22,10 @@
     "uuid": "^2.0.1"
   },
   "devDependencies": {
+    "babel": "^5.4.7",
+    "babel-preset-es2015": "^6.13.2",
     "chai": "^3.5.0",
+    "describe": "^1.2.0",
     "jscs": "^2.10.1",
     "jshint": "^2.9.1",
     "mocha": "^2.4.5"
